@@ -16,6 +16,7 @@ import {
 import config from './config/config.mjs';
 
 import { router as uploadRouter } from './routes/uploadRoute.mjs';
+import { router as yahooRouter } from './routes/yahooRoute.mjs';
 //import { sendMail } from "./mailsend.mjs";
 
 
@@ -33,6 +34,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.use('/user', uploadRouter);
+app.use("/yahooapi",yahooRouter)
 
 // error handlers
 // catch 404 and forward to error handler
@@ -53,6 +55,7 @@ mongoose.connect(config.mongoUri, {
     useUnifiedTopology: true,
      useFindAndModify: false,
      autoIndex: true }).then(()=>{
+      console.log("mongo connection established")
       server.listen(port);
      }).catch(err=>console.log(err))
 mongoose.connection.on('error', () => {
