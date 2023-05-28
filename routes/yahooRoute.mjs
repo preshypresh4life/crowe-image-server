@@ -29,10 +29,11 @@ const jsonFilePath = path.join(approotdir, subPath, fileName);
     return acc
     
     },{})
-    let symbolsString=query?.symbols?.trim()
-    if(symbolsString){
-      const symbolsArray=symbolsString.split(",").map(x=>x.trim())
-      let queryData=symbolsArray.map(symbol=>mappedData[symbol])
+    let symbolsString=query?.symbols
+    if(typeof symbolsString ==="string" ){
+      const symbolsArray=symbolsString.trim().split(",").map(x=>x.trim())
+      console.log({symbolsArray})
+      let queryData=symbolsArray.map(symbol=>mappedData[symbol]).filter(x=>x)
       return response(res, 200, 'success', queryData);
     }else{
       return response(res, 200, 'success', parsedData.quoteResponse.result);
