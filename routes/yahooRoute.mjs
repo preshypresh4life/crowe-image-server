@@ -29,7 +29,7 @@ const jsonFilePath = path.join(approotdir, subPath, fileName);
     return acc
     
     },{})
-    let symbolsString=query?.symbols.trim()
+    let symbolsString=query?.symbols?.trim()
     if(symbolsString){
       const symbolsArray=symbolsString.split(",").map(x=>x.trim())
       let queryData=symbolsArray.map(symbol=>mappedData[symbol])
