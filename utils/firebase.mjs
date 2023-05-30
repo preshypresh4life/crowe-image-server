@@ -13,7 +13,7 @@ const initiateFirebase = async() => {
    try {
   const res = await fetch(config.credential);
   const serviceAccount = await res.json();
-  console.log(serviceAccount)
+  console.log({serviceAccount})
   if (!res.ok) {
   throw new Error("failed to fetch firebase key")
 }
@@ -22,6 +22,7 @@ const initiateFirebase = async() => {
       storageBucket:"gs://pipsvile.appspot.com"
     });
   } catch (err) {
+    console.log({err})
       console.log("initalization failed")
   }
 };
