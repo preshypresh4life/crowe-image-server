@@ -2,8 +2,7 @@
 import { initializeApp,cert } from "firebase-admin/app";
 import "firebase/firestore"
 import config from "../config/config.mjs";
-// import serviceAccount from "../config/firebase_key.json"
-//import { readFile } from 'fs/promises';
+
 
 
 
