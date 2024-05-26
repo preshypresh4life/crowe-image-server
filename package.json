@@ -2,7 +2,7 @@
   "name": "sharedasset",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "cross-env DEBUG=app:* node ./app.mjs",
     "watch": "cross-env DEBUG=app:* nodemon ./app.mjs"
